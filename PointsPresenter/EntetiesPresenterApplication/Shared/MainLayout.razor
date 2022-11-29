@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.SignalR.Client
+@inherits LayoutComponentBase
+
+<PageTitle>EntetiesPresenterApp</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <article class="content px-4">
+           <CascadingValue Value="hubConnection">
+            @Body
+            </CascadingValue>
+        </article>
+    </main>
+</div>
+
+@code{
+     private HubConnection hubConnection;
+}

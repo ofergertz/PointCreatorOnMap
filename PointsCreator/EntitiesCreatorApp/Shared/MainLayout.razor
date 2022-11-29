@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.SignalR.Client
+@inherits LayoutComponentBase
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="0">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudSpacer />
+        <MudText Typo="Typo.h4"  Class="ml-3">Aero*******</MudText>
+        <MudSpacer />
+        <MudText>Press my Github -></MudText>
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/ofergertz?tab=repositories/" Target="_blank" />
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h6">EntitiesCreatorApp</MudText>
+        </MudDrawerHeader>
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
+           <CascadingValue Value="hubConnection">
+            @Body
+          </CascadingValue>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = false;
+
+   private HubConnection hubConnection;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}

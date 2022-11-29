@@ -1,0 +1,12 @@
+﻿<style>
+    body {
+        background-image: url(@ImageUrl);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
+</style>
+
+@code{
+    [Parameter] public string ImageUrl { get; set; }
+}

@@ -1,0 +1,8 @@
+﻿@using BusinessComponents
+@using Model
+@using MudBlazor
+
+<ellipse cx=@XPoint cy=@YPoint rx="20" ry=@ShapeConfiguration.YRadius.ToString() fill="red" />
+<text x=@XPoint.ToString() y=@(YPoint + @ShapeConfiguration.YRadius) dominant-baseline="hanging" 
+    text-anchor="middle">@Description</text>
+

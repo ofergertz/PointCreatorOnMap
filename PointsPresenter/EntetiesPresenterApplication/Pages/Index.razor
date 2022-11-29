@@ -1,0 +1,16 @@
+﻿@page "/"
+@implements IAsyncDisposable 
+@using BusinessComponents
+@using Model
+@using MudBlazor
+
+<MudFab @onclick="@(()=>ClearMap())" StartIcon="@Icons.Material.Filled.Delete" Color="Color.Error">Clear Map</MudFab>
+
+<BackgroundImage ImageUrl="@GetImageUrl()"/>
+
+<svg height=@ApplicationConfiguration.SvgHeight width=@ApplicationConfiguration.SvgWidth>
+    @foreach (var MapPoint in MapPoints)
+    {
+        <MarkerOnMap XPoint=@MapPoint.XPoint YPoint=@MapPoint.YPoint Description =@MapPoint.Name/>
+    }
+</svg>

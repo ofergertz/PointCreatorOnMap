@@ -1,0 +1,34 @@
+﻿@page "/"
+@implements IAsyncDisposable
+@using System.ComponentModel.DataAnnotations
+
+<style>
+    body {
+        background-image:url(@GetImageUrl());
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+<EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+<DataAnnotationsValidator/>
+
+<MudStack Class="pa-10" Row="true" Justify="Justify.Center">
+    <MudItem xs="12" sm="5">
+        <MudCard>
+            <MudCardContent>
+                <MudTextField Label="X coordinate of point" HelperText="decimal number"
+                              @bind-Value="model.XPoint" For="@(() => model.XPoint)"/>
+                <MudTextField Label="Y coordinate of point" HelperText="decimal number"
+                              @bind-Value="model.YPoint" For="@(() => model.YPoint)"/>
+                <MudTextField Label="Description of point" HelperText="short description of point"
+                              @bind-Value="model.Name" For="@(() => model.Name)"/>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton  ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Create Point</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+  </MudStack>
+</EditForm>

@@ -1,0 +1,24 @@
+﻿@using System.Net.Http
+@using Blazored.LocalStorage
+@using Infrastructure.Configuration
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
+@using EntetiesPresenterApplication
+@using EntetiesPresenterApplication.Shared
+@using Model.Cache
+@using Model.Hub
+@using Model.Infrastructure.Ioc
+@using MudBlazor
+
+@inject ILocalStorageService _localStorageService;
+@inject ApplicationConfiguration _applicationConfiguration;
+@inject CacheConfiguration _cacheConfiguration;
+@inject ICacheManager _cacheManager;
+@inject NavigationManager _navigationManager;
+@inject IJSRuntime _jsRuntime;
+@inject IApplicationResolver _applicationResolver;
