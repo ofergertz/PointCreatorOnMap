@@ -7,3 +7,4 @@ the floating button is to delete all points
 
 
 By using the hub we are simply can add other application (can be WPF or anything else) to get messages from hub and show the points on their on clients
+On the top right corner of the point creator application, you have a link to my own personal github account.
