@@ -10,8 +10,10 @@ namespace BusinessComponents.Points
 {
     public class Point : IPoint
     {
+        [Required]
         public double XPoint { get; set; }
 
+        [Required]
         public double YPoint { get; set; }
 
         [Required]
