@@ -18,10 +18,10 @@
     <MudItem xs="12" sm="5">
         <MudCard>
             <MudCardContent>
-                <MudTextField Label="X coordinate of point" HelperText="decimal number"
-                              @bind-Value="model.XPoint" For="@(() => model.XPoint)"/>
-                <MudTextField Label="Y coordinate of point" HelperText="decimal number"
-                              @bind-Value="model.YPoint" For="@(() => model.YPoint)"/>
+                <MudNumericField  Label="X coordinate of point" HelperText="double number"
+                              @bind-Value="model.XPoint" For="@(() => model.XPoint)" Min="0.0"/>
+                <MudNumericField  Label="Y coordinate of point" HelperText="double number"
+                              @bind-Value="model.YPoint" For="@(() => model.YPoint)" Min="0.0"/>
                 <MudTextField Label="Description of point" HelperText="short description of point"
                               @bind-Value="model.Name" For="@(() => model.Name)"/>
             </MudCardContent>
