@@ -21,7 +21,7 @@ namespace EntitiesCreatorApp.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            hubConnection = hubConnection.TryInitialize(_navigationManager, "https://localhost:7035/pointhub");
+            hubConnection = hubConnection.TryInitialize(_navigationManager, ApplicationConfiguration.ThirdPartyUrl);
 
             if (hubConnection.State == HubConnectionState.Disconnected)
             {
